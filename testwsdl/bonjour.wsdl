@@ -1,0 +1,50 @@
+<definitions name = "BonjourService"
+   targetNamespace = "http://www.exemples.com/wsdl/BonjourService.wsdl"
+   xmlns = "http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns = "http://www.exemples.com/wsdl/BonjourService.wsdl"
+   xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+
+   <message name = "AfficherBonjourRequest">
+      <part name = "prenom" type = "xsd:string"/>
+   </message>
+
+   <message name = "AfficherBonjourResponse">
+      <part name = "bonjour" type = "xsd:string"/>
+   </message>
+
+   <portType name = "Bonjour_PortType">
+      <operation name = "afficherBonjour">
+         <input message = "tns:AfficherBonjourRequest"/>
+         <output message = "tns:AfficherBonjourResponse"/>
+      </operation>
+   </portType>
+
+   <binding name = "Bonjour_Binding" type = "tns:Bonjour_PortType">
+      <soap:binding style = "rpc"
+         transport = "http://schemas.xmlsoap.org/soap/http"/>
+      <operation name = "afficherBonjour">
+         <soap:operation soapAction = "afficherBonjour"/>
+         <input>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:exemples:bonjourservice"
+               use = "encoded"/>
+         </input>
+
+         <output>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:exemples:bonjourservice"
+               use = "encoded"/>
+         </output>
+      </operation>
+   </binding>
+
+   <service name = "Bonjour_Service">
+      <port binding = "tns:Bonjour_Binding" name = "Bonjour_Port">
+         <soap:address
+            location = "http://www.exemples.com/AfficherBonjour/" />
+      </port>
+   </service>
+</definitions>
