@@ -2,3 +2,6 @@
 - https://www.mkyong.com/spring-batch/spring-batch-and-spring-taskscheduler-example/
 - http://www.baeldung.com/spring-scheduled-tasks
 - https://www.mkyong.com/webservices/jax-ws/jax-ws-wsimport-tool-example/
+- https://www.mkyong.com/java/javamail-api-sending-email-via-gmail-smtp-example/
+- https://projects.spring.io/spring-batch/
+- https://www.mkyong.com/spring/spring-sending-e-mail-via-gmail-smtp-server-with-mailsender/
